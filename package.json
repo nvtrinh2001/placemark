@@ -1,0 +1,54 @@
+{
+  "name": "placemark-hapi",
+  "version": "0.1.0",
+  "description": "Final assignment",
+  "main": "src/server.js",
+  "type": "module",
+  "scripts": {
+    "start": "node src/server.js ",
+    "dev": "./node_modules/.bin/nodemon src/server.js  --ignore 'src/models/json/*.json'",
+    "lint": "./node_modules/.bin/eslint . --ext .js",
+    "test": "./node_modules/mocha/bin/_mocha --ui tdd test/**/*.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nvtrinh2001/placemark.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nvtrinh2001/placemark/issues"
+  },
+  "homepage": "https://github.com/nvtrinh2001/placemark#readme",
+  "dependencies": {
+    "@hapi/boom": "^10.0.0",
+    "@hapi/cookie": "^11.0.2",
+    "@hapi/hapi": "^20.2.2",
+    "@hapi/inert": "^6.0.5",
+    "@hapi/vision": "^6.1.0",
+    "@splidejs/splide": "^4.0.7",
+    "axios": "^0.27.2",
+    "cloudinary": "^1.30.0",
+    "dotenv": "^16.0.1",
+    "handlebars": "^4.7.7",
+    "hapi-auth-jwt2": "^10.2.0",
+    "hapi-swagger": "^14.5.4",
+    "joi": "^17.6.0",
+    "jsonwebtoken": "^8.5.1",
+    "mais-mongoose-seeder": "^1.0.7",
+    "mongoose": "^6.3.3",
+    "svelte-spa-router": "^3.2.0"
+  },
+  "devDependencies": {
+    "@types/chai": "^4.3.1",
+    "chai": "^4.3.6",
+    "eslint": "^8.15.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-import": "^2.26.0",
+    "mocha": "^10.0.0",
+    "nodemon": "^2.0.16",
+    "prettier": "^2.6.2",
+    "tiny-slider": "^2.9.4"
+  }
+}

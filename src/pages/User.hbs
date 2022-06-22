@@ -1,0 +1,19 @@
+<div class="columns is-vcentered">
+  <div class="column">
+    {{> MainNavigator logo="images/logo.png" avatar=user.avatar}}
+  </div>
+</div>
+
+<div class="columns" style="margin-left: 64px; margin-right: 70px;">
+  <div class="column is-4 " style=" margin-top: 80px;">
+    {{> UserGeneral }}
+  </div>
+
+  <div class="column is-8 " style=" margin-top: 80px;">
+    {{> UserDetail }}
+
+    {{#if (isEqualAdminType user.type)}}
+        {{> AdminBoard}}
+    {{/if}}
+  </div>
+</div>

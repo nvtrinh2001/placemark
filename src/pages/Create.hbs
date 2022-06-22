@@ -1,0 +1,179 @@
+<div class="container">
+  <div class="modal is-active" id="modal1" style="z-index: 101;">
+    <a href="/favorite" class="modal-background" />
+    <a href="/favorite">
+      <i class="fas fa-times-circle" style="position: absolute; right: 474px; top: 44px; z-index: 101; color: rgba(255,255,255,0.6)"></i>
+    </a>
+    <form 
+      class="modal-card" 
+      action="/favorite/create" 
+      method="POST" 
+      enctype="multipart/form-data">
+      <header class="modal-card-head" style="background-color: #3e8ed0;">
+        <p class="modal-card-title" style="font-weight: 500; color: #fff;">
+          Add a new favorite location
+        </p>
+      </header>
+      <div class="modal-card-body">
+        <div class="">
+          <div class="field">
+            <p style="font-size: 16px; color: #3e8ed0; padding: 4px 10px;">
+              Name
+            </p>
+            <p class="control has-icons-left">
+              <input
+                class="input is-rounded "
+                type="text"
+                name="name"
+                placeholder="location name"
+              />
+              {{!-- <span class="icon is-small is-left">
+                <i class="fas fa-keyboard" />
+              </span> --}}
+            </p>
+          </div>
+          <div class="field">
+            <p style="font-size: 16px; color: #3e8ed0; padding: 4px 10px;">
+              Address
+            </p>
+            <p class="control has-icons-left">
+              <input
+                class="input is-rounded "
+                type="text"
+                name="address"
+                placeholder="location address"
+              />
+              {{!-- <span class="icon is-small is-left">
+                <i class="fas fa-keyboard" />
+              </span> --}}
+            </p>
+          </div>
+          <div class="field">
+            <p style="font-size: 16px; color: #3e8ed0; padding: 4px 10px;">
+              Latitude
+            </p>
+            <p class="control has-icons-left">
+              <input
+                class="input is-rounded "
+                type="text"
+                name="lat"
+                placeholder="location latitude"
+              />
+              {{!-- <span class="icon is-small is-left">
+                <i class="fas fa-keyboard" />
+              </span> --}}
+            </p>
+          </div>
+          <div class="field">
+            <p style="font-size: 16px; color: #3e8ed0; padding: 4px 10px;">
+              Longitude
+            </p>
+            <p class="control has-icons-left">
+              <input
+                class="input is-rounded "
+                type="text"
+                name="lng"
+                placeholder="location longitude"
+              />
+              {{!-- <span class="icon is-small is-left">
+                <i class="fas fa-keyboard" />
+              </span> --}}
+            </p>
+          </div>
+          <div class="field">
+            <p style="font-size: 16px; color: #3e8ed0; padding: 4px 10px;">
+              Description
+            </p>
+            <p class="control has-icons-left">
+              <input
+                class="input is-rounded "
+                type="text"
+                name="description"
+                placeholder="location description"
+              />
+              {{!-- <span class="icon is-small is-left">
+                <i class="fas fa-keyboard" />
+              </span> --}}
+            </p>
+          </div>
+          <div class="field">
+            <p style="font-size: 16px; color: #3e8ed0; padding: 4px 10px;">
+              Image
+            </p>
+            <p class="control has-icons-left">
+              {{!-- Upload image --}}
+              <div class="card-image">
+                <figure class="image is-256x256">
+                  <img src={{location.image}}>
+                </figure>
+              </div>
+              <div class="" >
+                  <div id="file-select" class="file has-name is-fullwidth">
+                    <label class="file-label"> 
+                    <input class="file-input" name="imagefile" type="file" name="resume" accept="image/png, image/jpeg" >
+                      <span class="file-cta" style="border-top-left-radius: 50px; border-bottom-left-radius: 50px;">
+                        <span class="file-icon">
+                          <i class="fas fa-upload"></i>
+                        </span>
+                        <span class="file-label">
+                          Choose a file…
+                        </span>
+                      </span>
+                      <span class="file-name" style="border-top-right-radius: 50px; border-bottom-right-radius: 50px;"></span>
+                    </label>
+                  </div>
+              </div>
+              {{!-- <input
+                class="input is-rounded "
+                type="text"
+                name="image"
+                placeholder="location image"
+              /> --}}
+              {{!-- <span class="icon is-small is-left">
+                <i class="fas fa-keyboard" />
+              </span> --}}
+            </p>
+          </div>
+          <div class="field">
+            <p style="font-size: 16px; color: #3e8ed0; padding: 4px 10px;">
+              Type
+            </p>
+            <div class="control has-icons-left">
+              <div class="select is-rounded ">
+                <!-- <select value={selectedChoice}> -->
+                <!-- <select value={selectedChoice} on:change={onChangeHandler}> -->
+                <select name="type">
+                  <option selected>attraction</option>
+                  <option>hotel</option>
+                  <option>restaurant</option>
+                </select>
+              </div>
+              {{!-- <span class="icon is-left">
+                <i class="fas fa-globe" />
+              </span> --}}
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal-card-foot">
+        <button type="submit" class="btn-create button is-link"> Create </button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<script>
+  const fileInput = document.querySelector(".file-input");
+  fileInput.onchange = () => {
+    if (fileInput.files.length > 0) {
+      const fileName = document.querySelector(".file-name");
+      fileName.textContent = fileInput.files[0].name;
+    }
+  };
+
+  //var btnCreate = document.getElementById('btn-create');
+  //  btnCreate.addEventListener('click', () => {
+  //      var imageForm = document.forms[1];
+  //      imageForm.submit();
+  //  })
+</script>

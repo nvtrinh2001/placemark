@@ -1,0 +1,136 @@
+<article class="panel is-info" style="margin-top: 12px; padding-bottom: 8px;">
+  <p class="panel-heading">My Favorite Locations</p>
+  <div class="control" style="margin: 6px 0 12px 0;">
+    <p class="panel-tabs">
+      {{#if all}}
+      <a href="/favorite" class="is-active">All</a>
+      {{else}}
+      <a href="/favorite">All</a>
+      {{/if}}
+      {{#if attractions}}
+      <a href="/favorite/attractions" class="is-active">Attractions</a>
+      {{else}}
+      <a href="/favorite/attractions">Attractions</a>
+      {{/if}}
+      {{#if hotels}}
+      <a href="/favorite/hotels" class="is-active">Hotels</a>
+      {{else}}
+      <a href="/favorite/hotels">Hotels</a>
+      {{/if}}
+      {{#if restaurants}}
+      <a href="/favorite/restaurants" class="is-active">Restaurants</a>
+      {{else}}
+      <a href="/favorite/restaurants">Restaurants</a>
+      {{/if}}
+    </p>
+  </div>
+  <div class="" style="max-height: 560px; overflow: auto;">
+  {{#each locations}}
+    <div class="box" style="padding-top: 10px;">
+        <div class="card-image">
+          <figure class="image is-4by3">
+            <img
+              src={{image}}
+              alt={{name}}
+              style="object-fit: contain;"
+            />
+          </figure>
+        </div>
+        <div class="panel-block" style="padding-left: 0px;">
+          <div class="subTitle">
+            {{name}}
+          </div>
+        </div>
+
+        <div class="" style="padding: 6px 0;">
+          <div
+            class="address"
+            style="display: flex; justify-content: space-between; align-items: center;"
+          >
+            <div class="" style="font-size: 14px;color: #3e8ed0;">
+              Address
+            </div>
+            <div
+              class="address-item"
+              style="text-align:right; font-size: 14px;"
+            >
+              {{address}}
+            </div>
+          </div>
+        </div>
+
+        <div class="" style="padding: 6px 0;">
+          <div
+            class="lat"
+            style="display: flex; justify-content: space-between; align-items: center;"
+          >
+            <div class="" style="font-size: 14px;color: #3e8ed0;">
+              Latitude
+            </div>
+            <div
+              class="address-item"
+              style="text-align:right; font-size: 14px;"
+            >
+              {{lat}}
+            </div>
+          </div>
+        </div>
+
+        <div class="" style="padding: 6px 0;">
+          <div
+            class="address"
+            style="display: flex; justify-content: space-between; align-items: center;"
+          >
+            <div class="" style="font-size: 14px;color: #3e8ed0;">
+              Longitude
+            </div>
+            <div
+              class="address-item"
+              style="text-align:right; font-size: 14px;"
+            >
+              {{lng}}
+            </div>
+          </div>
+        </div>
+
+        <div class="" style="padding: 6px 0;">
+          <div
+            class="address"
+            style="display: flex; justify-content: space-between; align-items: center;"
+          >
+            <div class="" style="font-size: 14px;color: #3e8ed0;">
+              Description
+            </div>
+            <div
+              class="address-item"
+              style="text-align:right; font-size: 14px;"
+            >
+              {{description}}
+            </div>
+          </div>
+        </div>
+        <div class="" style="padding: 6px 0;">
+          <div
+            class="button-wrapper"
+            style="display: flex; justify-content: space-between; align-items: center;"
+          >
+            <div class="" style="font-size: 14px;color: #3e8ed0;">
+              <a
+                class="button is-small is-danger is-rounded"
+                style="margin-top: 6px;"
+                href="/favorite/remove/{{_id}}">Remove</a
+              >
+            </div>
+            <div class="" style="text-align:right; font-size: 14px;">
+              <a
+                class="button is-small is-link is-rounded"
+                style="margin-top: 6px;"
+                href="/favorite/update/{{_id}}">Update</a
+              >
+            </div>
+          </div>
+        </div>
+    </div>
+  {{/each}}
+  </div>
+</article>
