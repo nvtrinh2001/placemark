@@ -15,8 +15,7 @@ export const webRoutes = [
   { method: "GET", path: "/user", config: placemarkController.getUserInformation },
   { method: "POST", path: "/user/uploadimage", config: placemarkController.updateImage },
   { method: "POST", path: "/user/updateinfo", config: placemarkController.updateInfo },
-  { method: "GET", path: "/search", config: placemarkController.index },
-  // { method: "POST", path: "/search", config: placemarkController.search },
+
   { method: "GET", path: "/favorite/create", config: placemarkController.getCreatingLocationForm },
   { method: "POST", path: "/favorite/create", config: placemarkController.create },
   { method: "GET", path: "/favorite/attractions", config: placemarkController.favoriteAttractions },

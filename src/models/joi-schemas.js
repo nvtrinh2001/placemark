@@ -1,4 +1,7 @@
 import Joi from "joi";
+import Mongoose from "mongoose";
+
+const { Schema } = Mongoose;
 
 export const UserSpec = {
   firstName: Joi.string().required(),
@@ -12,15 +15,6 @@ export const UserSpec = {
 export const UserCredentialsSpec = {
   email: Joi.string().email().required(),
   password: Joi.string().required(),
-};
-
-export const LocationSpec = {
-  name: Joi.string().required(),
-  address: Joi.string().required(),
-  lat: Joi.string().required(),
-  lng: Joi.string().required(),
-  description: Joi.string().required(),
-  image: Joi.string().required(),
 };
 
 export const DiscoverySpec = {

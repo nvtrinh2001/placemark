@@ -50,7 +50,7 @@ export const accountsController = {
         return h.redirect("/");
       }
       request.cookieAuth.set({ id: user._id });
-      return h.redirect("/search");
+      return h.redirect("/favorite");
     },
   },
   logout: {

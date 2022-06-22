@@ -5,7 +5,7 @@ export const placemarkController = {
   index: {
     handler: async function (request, h) {
       const loggedInUser = request.auth.credentials;
-      return h.view("Search", { title: "Make a PlaceMark", user: loggedInUser });
+      return h.view("Favorite", { title: "Favorite Locations", user: loggedInUser });
     },
   },
   favorite: {
