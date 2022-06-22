@@ -94,6 +94,7 @@
           </div>
         </div>
 
+        <hr class="dropdown-divider">
         <div class="" style="padding: 6px 0;">
           <div
             class="address"
@@ -106,10 +107,14 @@
               class="address-item"
               style="text-align:right; font-size: 14px;"
             >
-              {{description}}
+              {{#each description_array}}
+                <p>{{this}}</p>
+              {{/each}}
             </div>
           </div>
         </div>
+        <hr class="dropdown-divider">
+
         <div class="" style="padding: 6px 0;">
           <div
             class="button-wrapper"

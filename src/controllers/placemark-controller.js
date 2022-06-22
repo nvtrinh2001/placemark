@@ -12,6 +12,10 @@ export const placemarkController = {
     handler: async function (request, h) {
       const loggedInUser = request.auth.credentials;
       const locations = await db.locationStore.getAllLocations(loggedInUser._id);
+      const descriptionArray = locations.map((value) => value.description.split("\n"));
+      for (let i = 0; i < locations.length; i += 1) {
+        locations[i].description_array = descriptionArray[i];
+      }
       return h.view("Favorite", {
         title: "Favorite Locations",
         user: loggedInUser,
@@ -24,6 +28,10 @@ export const placemarkController = {
     handler: async function (request, h) {
       const loggedInUser = request.auth.credentials;
       const locations = await db.locationStore.getAllAttractionLocations(loggedInUser._id);
+      const descriptionArray = locations.map((value) => value.description.split("\n"));
+      for (let i = 0; i < locations.length; i += 1) {
+        locations[i].description_array = descriptionArray[i];
+      }
       return h.view("Favorite", {
         title: "Favorite Attractions",
         user: loggedInUser,
@@ -36,6 +44,10 @@ export const placemarkController = {
     handler: async function (request, h) {
       const loggedInUser = request.auth.credentials;
       const locations = await db.locationStore.getAllHotelLocations(loggedInUser._id);
+      const descriptionArray = locations.map((value) => value.description.split("\n"));
+      for (let i = 0; i < locations.length; i += 1) {
+        locations[i].description_array = descriptionArray[i];
+      }
       return h.view("Favorite", {
         title: "Favorite Hotels",
         user: loggedInUser,
@@ -48,6 +60,10 @@ export const placemarkController = {
     handler: async function (request, h) {
       const loggedInUser = request.auth.credentials;
       const locations = await db.locationStore.getAllRestaurantLocations(loggedInUser._id);
+      const descriptionArray = locations.map((value) => value.description.split("\n"));
+      for (let i = 0; i < locations.length; i += 1) {
+        locations[i].description_array = descriptionArray[i];
+      }
       return h.view("Favorite", {
         title: "Favorite Restaurants",
         user: loggedInUser,
@@ -60,6 +76,7 @@ export const placemarkController = {
     handler: async function (request, h) {
       const loggedInUser = request.auth.credentials;
       const location = await db.locationStore.getLocationById(request.params.id);
+      location.description_array = location.description.split("\n");
       return h.view("Update", {
         title: "Update Location",
         user: loggedInUser,
@@ -202,6 +219,10 @@ export const placemarkController = {
     handler: async function (request, h) {
       const loggedInUser = request.auth.credentials;
       const locations = await db.discoveryStore.getAllLocations();
+      const descriptionArray = locations.map((value) => value.description.split("\n"));
+      for (let i = 0; i < locations.length; i += 1) {
+        locations[i].description_array = descriptionArray[i];
+      }
       return h.view("Discovery", {
         title: "London Discovery",
         user: loggedInUser,
@@ -264,6 +285,10 @@ export const placemarkController = {
     handler: async function (request, h) {
       const loggedInUser = request.auth.credentials;
       const locations = await db.discoveryStore.getAllAttractionLocations();
+      const descriptionArray = locations.map((value) => value.description.split("\n"));
+      for (let i = 0; i < locations.length; i += 1) {
+        locations[i].description_array = descriptionArray[i];
+      }
       return h.view("Discovery", {
         title: "London Attractions",
         user: loggedInUser,
@@ -276,6 +301,10 @@ export const placemarkController = {
     handler: async function (request, h) {
       const loggedInUser = request.auth.credentials;
       const locations = await db.discoveryStore.getAllHotelLocations();
+      const descriptionArray = locations.map((value) => value.description.split("\n"));
+      for (let i = 0; i < locations.length; i += 1) {
+        locations[i].description_array = descriptionArray[i];
+      }
       return h.view("Discovery", {
         title: "London Hotels",
         user: loggedInUser,
@@ -288,6 +317,10 @@ export const placemarkController = {
     handler: async function (request, h) {
       const loggedInUser = request.auth.credentials;
       const locations = await db.discoveryStore.getAllRestaurantLocations();
+      const descriptionArray = locations.map((value) => value.description.split("\n"));
+      for (let i = 0; i < locations.length; i += 1) {
+        locations[i].description_array = descriptionArray[i];
+      }
       return h.view("Discovery", {
         title: "London Restaurants",
         user: loggedInUser,
