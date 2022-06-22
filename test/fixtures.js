@@ -5,6 +5,8 @@ export const maggie = {
   lastName: "Simpson",
   email: "maggie@simpson.com",
   password: "secret",
+  avatar: "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1a/f6/ee/68/default-avatar-2020-9.jpg?w=100&h=-1&s=1",
+  type: "client",
 };
 
 export const maggieCredentials = {
@@ -18,50 +20,24 @@ export const testUsers = [
     lastName: "Simpson",
     email: "homer@simpson.com",
     password: "secret",
+    avatar: "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1a/f6/ee/68/default-avatar-2020-9.jpg?w=100&h=-1&s=1",
+    type: "administrator",
   },
   {
     firstName: "Marge",
     lastName: "Simpson",
     email: "marge@simpson.com",
     password: "secret",
+    avatar: "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1a/f6/ee/68/default-avatar-2020-9.jpg?w=100&h=-1&s=1",
+    type: "client",
   },
   {
     firstName: "Bart",
     lastName: "Simpson",
     email: "bart@simpson.com",
     password: "secret",
-  },
-];
-
-export const testCandidates = [
-  {
-    firstName: "Lisa",
-    lastName: "Simpson",
-  },
-  {
-    firstName: "Maggie",
-    lastName: "Simpson",
-  },
-];
-
-export const testDonations = [
-  {
-    amount: 90,
-    method: "cash",
-    lat: "52.160858",
-    lng: "-7.152420",
-  },
-  {
-    amount: 80,
-    method: "cash",
-    lat: "52.149220",
-    lng: "-6.994620",
-  },
-  {
-    amount: 50,
-    method: "paypal",
-    lat: "52.161290",
-    lng: "-7.231540",
+    avatar: "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1a/f6/ee/68/default-avatar-2020-9.jpg?w=100&h=-1&s=1",
+    type: "administrator",
   },
 ];
 

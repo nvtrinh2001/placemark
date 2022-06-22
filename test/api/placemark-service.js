@@ -38,61 +38,46 @@ export const placemarkService = {
     axios.defaults.headers.common.Authorization = "";
   },
 
-  async makeDonation(id, donation) {
-    const response = await axios.post(`${this.placemarkUrl}/api/candidates/${id}/donations`, donation);
-    return response.data;
-  },
-
-  async getDonations(id) {
-    const response = await axios.get(`${this.placemarkUrl}/api/candidates/${id}/donations`);
-    return response.data;
-  },
-
-  async createCandidate(newCandidate) {
-    const response = await axios.post(`${this.placemarkUrl}/api/candidates`, newCandidate);
-    return response.data;
-  },
-
   // Location
-  async createLocation(location) {
+  async createLocation(location, id) {
     try {
-      const res = await axios.post(`${this.placemarkUrl}/api/locations`, location);
+      const res = await axios.post(`${this.placemarkUrl}/api/locations`, location, id);
       return res.data;
     } catch (e) {
       return null;
     }
   },
 
-  async getAllLocations() {
+  async getAllLocations(id) {
     try {
-      const res = await axios.get(`${this.placemarkUrl}/api/locations`);
+      const res = await axios.get(`${this.placemarkUrl}/api/locations`, id);
       return res.data;
     } catch (e) {
       return null;
     }
   },
 
-  async getAllAttractionLocations() {
+  async getAllAttractionLocations(id) {
     try {
-      const res = await axios.get(`${this.placemarkUrl}/api/locations/attractions`);
+      const res = await axios.get(`${this.placemarkUrl}/api/locations/attractions`, id);
       return res.data;
     } catch (e) {
       return null;
     }
   },
 
-  async getAllRestaurantLocations() {
+  async getAllRestaurantLocations(id) {
     try {
-      const res = await axios.get(`${this.placemarkUrl}/api/locations/restaurants`);
+      const res = await axios.get(`${this.placemarkUrl}/api/locations/restaurants`, id);
       return res.data;
     } catch (e) {
       return null;
     }
   },
 
-  async getAllHotelLocations() {
+  async getAllHotelLocations(id) {
     try {
-      const res = await axios.get(`${this.placemarkUrl}/api/locations/hotels`);
+      const res = await axios.get(`${this.placemarkUrl}/api/locations/hotels`, id);
       return res.data;
     } catch (e) {
       return null;
@@ -109,28 +94,109 @@ export const placemarkService = {
     return res.data;
   },
 
-  async deleteAllLocations() {
-    const res = await axios.delete(`${this.placemarkUrl}/api/locations`);
+  async deleteAllLocations(id) {
+    const res = await axios.delete(`${this.placemarkUrl}/api/locations`, id);
     return res.data;
   },
 
-  async deleteAllAttractionLocations() {
-    const res = await axios.delete(`${this.placemarkUrl}/api/locations/attractions`);
+  async deleteAllAttractionLocations(id) {
+    const res = await axios.delete(`${this.placemarkUrl}/api/locations/attractions`, id);
     return res.data;
   },
 
-  async deleteAllRestaurantLocations() {
-    const res = await axios.delete(`${this.placemarkUrl}/api/locations/restaurants`);
+  async deleteAllRestaurantLocations(id) {
+    const res = await axios.delete(`${this.placemarkUrl}/api/locations/restaurants`, id);
     return res.data;
   },
 
-  async deleteAllHotelLocations() {
-    const res = await axios.delete(`${this.placemarkUrl}/api/locations/hotels`);
+  async deleteAllHotelLocations(id) {
+    const res = await axios.delete(`${this.placemarkUrl}/api/locations/hotels`, id);
     return res.data;
   },
 
   async updateLocationById(id, location) {
     const res = await axios.put(`${this.placemarkUrl}/api/locations/${id}`, location);
+    return res.data;
+  },
+
+  // Discovery
+  async createLondonLocation(location) {
+    try {
+      const res = await axios.post(`${this.placemarkUrl}/api/discovery`, location);
+      return res.data;
+    } catch (e) {
+      return null;
+    }
+  },
+
+  async getAllLondonLocations() {
+    try {
+      const res = await axios.get(`${this.placemarkUrl}/api/discovery`);
+      return res.data;
+    } catch (e) {
+      return null;
+    }
+  },
+
+  async getLondonAttractionLocations() {
+    try {
+      const res = await axios.get(`${this.placemarkUrl}/api/discovery/attractions`);
+      return res.data;
+    } catch (e) {
+      return null;
+    }
+  },
+
+  async getLondonRestaurantLocations() {
+    try {
+      const res = await axios.get(`${this.placemarkUrl}/api/discovery/restaurants`);
+      return res.data;
+    } catch (e) {
+      return null;
+    }
+  },
+
+  async getLondonHotelLocations() {
+    try {
+      const res = await axios.get(`${this.placemarkUrl}/api/discovery/hotels`);
+      return res.data;
+    } catch (e) {
+      return null;
+    }
+  },
+
+  async getLondonLocationById(id) {
+    const res = await axios.get(`${this.placemarkUrl}/api/discovery/${id}`);
+    return res.data;
+  },
+
+  async deleteLondonLocationById(id) {
+    const res = await axios.delete(`${this.placemarkUrl}/api/discovery/${id}`);
+    return res.data;
+  },
+
+  async deleteAllLondonLocations() {
+    const res = await axios.delete(`${this.placemarkUrl}/api/discovery`);
+    return res.data;
+  },
+
+  async deleteLondonAttractionLocations() {
+    const res = await axios.delete(`${this.placemarkUrl}/api/discovery/attractions`);
+    return res.data;
+  },
+
+  async deleteLondonRestaurantLocations() {
+    const res = await axios.delete(`${this.placemarkUrl}/api/discovery/restaurants`);
+    return res.data;
+  },
+
+  async deleteLondonHotelLocations() {
+    const res = await axios.delete(`${this.placemarkUrl}/api/discovery/hotels`);
+    return res.data;
+  },
+
+  async updateLondonLocationById(id, location) {
+    const res = await axios.put(`${this.placemarkUrl}/api/discovery/${id}`, location);
     return res.data;
   },
 };
