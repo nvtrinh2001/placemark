@@ -3,7 +3,7 @@ import { placemarkService } from "./placemark-service.js";
 import { maggie, testLocations, randomLocation, myHouse } from "../fixtures.js";
 import { assertSubset } from "../test-utils.js";
 
-suite("Location API tests", () => {
+suite("Discovery API tests", () => {
   setup(async () => {
     let user = await placemarkService.createUser(maggie);
     await placemarkService.authenticate(maggie);
