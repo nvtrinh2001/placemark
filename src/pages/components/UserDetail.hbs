@@ -48,7 +48,7 @@
     <div class="field">
       <p class="control is-expanded has-icons-left">
         <input class="input" type="password" name="password" id="password" placeholder="Password" value="{{user.password}}">
-        <span class="icon is-small is-left" id="togglePassword" style="pointer-events: all; cursor: pointer">
+        <span class="icon is-small is-left" id="togglePassword">
           <i class="fas fa-eye-slash" id="icon-password"></i>
         </span>
       </p>
@@ -88,25 +88,26 @@
 </form>
 
 <script>
-        const togglePassword = document.querySelector("#togglePassword");
-        const password = document.querySelector("#password");
-        const iconPassword = document.querySelector("#icon-password");
+    const togglePassword = document.querySelector("#togglePassword");
+    const password = document.querySelector("#password");
+    const iconPassword = document.querySelector("#icon-password");
 
-        togglePassword.addEventListener("click", function () {
-            // toggle the type attribute
-            const type = password.getAttribute("type") === "password" ? "text" : "password";
-            password.setAttribute("type", type);
-            
-            // toggle the icon
-            if (iconPassword.classList.contains("fa-eye"))
-              iconPassword.classList.replace("fa-eye", "fa-eye-slash");
-            else if (iconPassword.classList.contains("fa-eye-slash"))
-              iconPassword.classList.replace("fa-eye-slash", "fa-eye");
-        });
+    togglePassword.addEventListener("click", function () {
+        // toggle the type attribute
+        const type = password.getAttribute("type") === "password" ? "text" : "password";
+        password.setAttribute("type", type);
+        
+        // toggle the icon
+        if (iconPassword.classList.contains("fa-eye"))
+          iconPassword.classList.replace("fa-eye", "fa-eye-slash");
+        else if (iconPassword.classList.contains("fa-eye-slash"))
+          iconPassword.classList.replace("fa-eye-slash", "fa-eye");
+    });
+</script>
 
-        // prevent form submit
-        // const form = document.querySelector("form");
-        // form.addEventListener('submit', function (e) {
-        //    e.preventDefault();
-        // });
-    </script>
+<style>
+  #togglePassword {
+     pointer-events: all; 
+     cursor: pointer;
+  }
+</style>

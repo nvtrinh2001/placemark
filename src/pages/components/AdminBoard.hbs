@@ -3,7 +3,7 @@
 <div class="my-slider">
     {{#each allUsers}}
     <div>
-        <form action="/admin/change/{{_id}}" method="POST" class="panel is-link" style="box-shadow: none; border: 1px solid #ccc;">
+        <form action="/admin/change/{{_id}}" method="POST" class="panel is-link">
             <div class="panel-heading">All Users</div>
             <div class="panel-block">
                 <div class="field-label is-normal">
@@ -95,7 +95,10 @@
             <div class="field-body">
                 <div class="field">
                 <div class="control">
-                    <button class="button is-link" style="margin-right: 6px;">Change</button>
+                    <button 
+                        class="button is-link" 
+                        style="margin-right: 6px;"
+                    >Change</button>
                     <a href="/admin/remove/{{_id}}" class="button is-danger remove-btn">Remove</a>
                 </div>
                 </div>
@@ -129,3 +132,10 @@
         `;
     }
 </script>
+
+<style>
+    .panel {
+        box-shadow: none; 
+        border: 1px solid #ccc;
+    }
+</style>

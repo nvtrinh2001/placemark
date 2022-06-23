@@ -1,11 +1,11 @@
 <script>
 </script>
 
-<nav style="position: fixed; width: 100%; padding: 8px 80px; top: 0; left: 0; right: 0;" class="navbar box" aria-label="main navigation">
+<nav class="navbar box" aria-label="main navigation">
   <div class="navbar-brand">
-    <a href="/favorite" style="display: flex; align-items:center;">
-      <img src="https://res.cloudinary.com/placemark-image-gallery/image/upload/v1655935833/logo_gtiscx.png" width="72" style="padding: 6px; object-fit: cover;" alt="logo">
-      <strong style="color: rgb(55, 55, 55); font-size:x-large;padding: 6px;">Travisor</strong>
+    <a href="/favorite">
+      <img src="https://res.cloudinary.com/placemark-image-gallery/image/upload/v1655935833/logo_gtiscx.png" width="72" alt="logo">
+      <strong class="brand-name">Travisor</strong>
     </a>
   </div>
 
@@ -29,25 +29,28 @@
         </div>
       </div>
       {{/if}}
-      <div class="dropdown is-right is-hoverable" style="cursor:pointer;">
-        <div class="dropdown-trigger" style="display: flex; align-items: center;">
+      <div class="dropdown is-right is-hoverable" style="cursor: pointer;">
+        <div class="dropdown-trigger user-avatar">
           <figure class="image is-32x32" >
-            <img src={{avatar}} class="image is-rounded is-32x32" alt="avatar" style="object-fit: cover;">
+            <img src={{avatar}} 
+              class="image is-rounded is-32x32" 
+              alt="avatar" 
+              style="object-fit: cover;">
           </figure>
         </div>
         <div class="dropdown-menu" id="dropdown-menu" role="menu">
           <div class="dropdown-content">
-            <a href="/favorite" class="dropdown-item" style="padding-top: 8px; padding-bottom: 8px; font-size: 16px; color: rgb(20,20,20); font-weight:300;">
+            <a href="/favorite" class="dropdown-item">
               Favorite
             </a>
-            <a href="/discovery" class="dropdown-item" style="padding-top: 8px; padding-bottom: 8px; font-size: 16px; color: rgb(20,20,20); font-weight:300;">
+            <a href="/discovery" class="dropdown-item">
               London Discovery
             </a>
             <hr class="dropdown-divider">
-            <a href="/user" class="dropdown-item" style="padding-top: 8px; padding-bottom: 8px; font-size: 16px; color: rgb(20,20,20); font-weight:300;">
+            <a href="/user" class="dropdown-item">
               My Account
             </a>
-            <a href="/logout" class="dropdown-item" style="padding-top: 8px; padding-bottom: 8px; font-size: 16px; color: rgb(20,20,20); font-weight:300;">
+            <a href="/logout" class="dropdown-item">
               Logout
             </a>
           </div>
@@ -56,3 +59,38 @@
     </div>
   </div>
 </nav>
+
+<style>
+  .navbar.box {
+    position: fixed;
+    width: 100%;
+    padding: 8px 80px;
+    top: 0;
+    left: 0;
+    right: 0;
+  }
+  .navbar-brand > a {
+    display: flex;
+    align-items: center;
+  }
+  a > img {
+    padding: 6px; 
+    object-fit: cover;
+  }
+  .brand-name {
+    color: rgb(55, 55, 55);
+    font-size: x-large;
+    padding: 6px;
+  }
+  .user-avatar {
+    display: flex;
+    align-items: center;
+  }
+  .dropdown-item {
+    padding-top: 8px;
+    padding-bottom: 8px;
+    font-size: 16px;
+    color: rgb(20, 20, 20);
+    font-weight: 300;
+  }
+</style>

@@ -1,6 +1,6 @@
-<article class="panel is-info" style="margin-top: 12px; padding-bottom: 8px;">
+<article class="panel is-info">
   <p class="panel-heading">London Locations</p>
-  <div class="control" style="margin: 6px 0 12px 0;">
+  <div class="control">
     <p class="panel-tabs">
       {{#if all}}
       <a href="/discovery" class="is-active">All</a>
@@ -24,7 +24,7 @@
       {{/if}}
     </p>
   </div>
-  <div class="" style="max-height: 560px; overflow: auto;">
+  <div class="list-container">
     {{#if locations}}
   {{#each locations}}
     <div class="box" style="padding-top: 10px;">
@@ -43,96 +43,60 @@
           </div>
         </div>
 
-        <div class="" style="padding: 6px 0;">
-          <div
-            class="address"
-            style="display: flex; justify-content: space-between; align-items: center;"
-          >
-            <div class="" style="font-size: 14px;color: #3e8ed0;">
-              Address
-            </div>
-            <div
-              class="address-item"
-              style="text-align:right; font-size: 14px;"
-            >
-              {{address}}
-            </div>
+        <div class="address">
+          <div class="address-subtitle">
+            Address
+          </div>
+          <div class="address-item">
+            {{address}}
           </div>
         </div>
 
-        <div class="" style="padding: 6px 0;">
-          <div
-            class="lat"
-            style="display: flex; justify-content: space-between; align-items: center;"
-          >
-            <div class="" style="font-size: 14px;color: #3e8ed0;">
-              Latitude
-            </div>
-            <div
-              class="address-item"
-              style="text-align:right; font-size: 14px;"
-            >
-              {{lat}}
-            </div>
+        <div class="address">
+          <div class="address-subtitle">
+            Latitude
+          </div>
+          <div class="address-item">
+            {{lat}}
           </div>
         </div>
 
-        <div class="" style="padding: 6px 0;">
-          <div
-            class="address"
-            style="display: flex; justify-content: space-between; align-items: center;"
-          >
-            <div class="" style="font-size: 14px;color: #3e8ed0;">
-              Longitude
-            </div>
-            <div
-              class="address-item"
-              style="text-align:right; font-size: 14px;"
-            >
-              {{lng}}
-            </div>
+        <div class="address">
+          <div class="address-subtitle">
+            Longitude
+          </div>
+          <div class="address-item">
+            {{lng}}
           </div>
         </div>
+
         <hr class="dropdown-divider">
-        <div class="" style="padding: 6px 0;">
-          <div
-            class="address"
-            style="display: flex; justify-content: space-between; align-items: center;"
-          >
-            <div class="" style="font-size: 14px;color: #3e8ed0;">
-              Description
-            </div>
-            <div
-              class="address-item"
-              style="text-align:right; font-size: 14px;"
-            >
-              {{#each description_array}}
-                <p>{{this}}</p>
-              {{/each}}
-            </div>
+        <div class="description">
+          <div class="description-subtitle">
+            Description
+          </div>
+          <div class="description-item">
+            {{#each description_array}}
+              <p>{{this}}</p>
+            {{/each}}
           </div>
         </div>
         <hr class="dropdown-divider">
         
-        <div class="" style="padding: 6px 0;">
-          <div
-            class="button-wrapper"
-            style="display: flex; justify-content: space-between; align-items: center;"
-          >
-            <div class="" style="font-size: 14px;color: #3e8ed0;">
-              <a
-                class="button is-small is-danger is-rounded"
-                style="margin-top: 6px;"
-                href="/discovery/remove/{{_id}}">Remove</a
-              >
-            </div>
-            <div class="" style="text-align:right; font-size: 14px;">
-              <a
-                class="button is-small is-link is-rounded"
-                style="margin-top: 6px;"
-                href="/discovery/update/{{_id}}">Update</a
-              >
-            </div>
+        <div class="button-wrapper">
+          <div class="button1">
+            <a
+              class="button is-small is-danger is-rounded"
+              style="margin-top: 6px;"
+              href="/discovery/remove/{{_id}}">Remove</a
+            >
+          </div>
+          <div class="button2">
+            <a
+              class="button is-small is-link is-rounded"
+              style="margin-top: 6px;"
+              href="/discovery/update/{{_id}}">Update</a
+            >
           </div>
         </div>
     </div>
@@ -142,3 +106,37 @@
   {{/if}}
   </div>
 </article>
+
+<style>
+  .panel {
+     margin-top: 12px; 
+     padding-bottom: 8px;
+  }
+  .control {
+     margin: 6px 0 12px 0;
+  }
+  .list-container {
+    max-height: 560px;
+    overflow: auto;
+  }
+  .address, 
+  .description,
+  .button-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 6px 0;
+  }
+  .button2,
+  .address-item, 
+  .description-item {
+    text-align: right;
+    font-size: 14px;
+  }
+  .button1, 
+  .address-subtitle, 
+  .description-subtitle {
+    font-size: 14px;
+    color: #3e8ed0;
+  }
+</style>

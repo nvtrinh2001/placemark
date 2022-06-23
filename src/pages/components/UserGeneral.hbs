@@ -7,7 +7,10 @@
   <div class="card-content">
     <div class="media">
       <div class="media-left">
-          <img src={{user.avatar}} class="image is-48x48" alt="avatar" style="object-fit: cover;">
+          <img src={{user.avatar}} 
+            class="image is-48x48" 
+            alt="avatar" 
+            style="object-fit: cover;">
       </div>
       <div class="media-content">
         <p class="title is-4">{{user.firstName}} {{user.lastName}}</p>
@@ -21,8 +24,11 @@
         enctype="multipart/form-data">
         <div id="file-select" class="file has-name is-fullwidth is-small">
         <label class="file-label"> 
-        <input class="file-input" name="imagefile" type="file" name="resume" accept="image/png, image/jpeg" >
-            <span class="file-cta" style="border-top-left-radius: 50px; border-bottom-left-radius: 50px;">
+            <input class="file-input" 
+              name="imagefile" 
+              type="file" 
+              accept="image/png, image/jpeg" >
+            <span class="file-cta fileUpload">
             <span class="file-icon">
                 <i class="fas fa-upload"></i>
             </span>
@@ -31,7 +37,11 @@
             </span>
             </span>
             <span class="file-name" ></span>
-            <button type="submit" class="button is-info is-small" style="border-top-right-radius: 50px; border-bottom-right-radius: 50px;">Upload</button>
+            <button 
+              type="submit" class="button is-info is-small" 
+              style="
+                border-top-right-radius: 50px; 
+                border-bottom-right-radius: 50px;">Upload</button>
         </label>
         </div>
     </form>
@@ -47,3 +57,10 @@
     }
   };
 </script>
+
+<style>
+  .fileUpload {
+     border-top-left-radius: 50px; 
+     border-bottom-left-radius: 50px;
+  }
+</style>

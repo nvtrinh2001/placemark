@@ -1,159 +1,144 @@
 <div class="container">
-  <div class="modal is-active" id="modal1" style="z-index: 101;">
+  <div class="modal is-active" style="z-index: 101;">
     <a href="/favorite" class="modal-background" />
     <a href="/favorite">
-      <i class="fas fa-times-circle" style="position: absolute; right: 474px; top: 44px; z-index: 101; color: rgba(255,255,255,0.6)"></i>
+      <i class="fas fa-times-circle del-btn"></i>
     </a>
     <form 
       class="modal-card" 
       action="/favorite/update/{{location._id}}" 
       method="POST" 
       enctype="multipart/form-data">
-      <header class="modal-card-head" style="background-color: #3e8ed0;">
-        <p class="modal-card-title" style="font-weight: 500; color: #fff;">
+      <header class="modal-card-head modal-header">
+        <p class="modal-card-title modal-heading">
           Update your location
         </p>
       </header>
       <div class="modal-card-body">
-        <div class="">
-          <div class="field">
-            <p style="font-size: 16px; color: #3e8ed0; padding: 4px 10px;">
-              Name
-            </p>
-            <p class="control has-icons-left">
-              <input
-                class="input is-rounded "
-                type="text"
-                name="name"
-                placeholder="location name"
-                value="{{location.name}}"
-              />
-              {{!-- <span class="icon is-small is-left">
-                <i class="fas fa-keyboard" />
-              </span> --}}
-            </p>
-          </div>
-          <div class="field">
-            <p style="font-size: 16px; color: #3e8ed0; padding: 4px 10px;">
-              Address
-            </p>
-            <p class="control has-icons-left">
-              <input
-                class="input is-rounded "
-                type="text"
-                name="address"
-                placeholder="location address"
-                value="{{location.address}}"
-              />
-              {{!-- <span class="icon is-small is-left">
-                <i class="fas fa-keyboard" />
-              </span> --}}
-            </p>
-          </div>
-          <div class="field">
-            <p style="font-size: 16px; color: #3e8ed0; padding: 4px 10px;">
-              Latitude
-            </p>
-            <p class="control has-icons-left">
-              <input
-                class="input is-rounded "
-                type="text"
-                name="lat"
-                placeholder="Location lat"
-                value="{{location.lat}}"
-              />
-              {{!-- <span class="icon is-small is-left">
-                <i class="fas fa-keyboard" />
-              </span> --}}
-            </p>
-          </div>
-          <div class="field">
-            <p style="font-size: 16px; color: #3e8ed0; padding: 4px 10px;">
-              Longitude
-            </p>
-            <p class="control has-icons-left">
-              <input
-                class="input is-rounded "
-                type="text"
-                name="lng"
-                placeholder="Location lng"
-                value="{{location.lng}}"
-              />
-              {{!-- <span class="icon is-small is-left">
-                <i class="fas fa-keyboard" />
-              </span> --}}
-            </p>
-          </div>
-          <div class="field">
-            <p style="font-size: 16px; color: #3e8ed0; padding: 4px 10px;">
-              Description
-            </p>
-            <p class="control has-icons-left">
-              <input
-                class="input is-rounded "
-                type="text"
-                name="description"
-                placeholder="location description"
-                value="{{location.description}}"
-              />
-              {{!-- <span class="icon is-small is-left">
-                <i class="fas fa-keyboard" />
-              </span> --}}
-            </p>
-          </div>
-          <div class="field">
-            <p style="font-size: 16px; color: #3e8ed0; padding: 4px 10px;">
-              Image
-            </p>
-            <p class="control has-icons-left">
-              {{!-- Upload image --}}
-              <div class="card-image">
-                <figure class="box image is-256x256">
-                  <img src={{location.image}}>
-                </figure>
-              </div>
-              <div class="" style="margin-top: 12px;">
-                  <div id="file-select" class="file has-name is-fullwidth">
-                    <label class="file-label"> 
-                    <input class="file-input" name="imagefile" type="file" name="resume" accept="image/png, image/jpeg">
-                      <span class="file-cta" style="border-top-left-radius: 50px; border-bottom-left-radius: 50px;">
-                        <span class="file-icon">
-                          <i class="fas fa-upload"></i>
-                        </span>
-                        <span class="file-label">
-                          Choose a file…
-                        </span>
+        <div class="field">
+          <p class="fieldTitle">
+            Name
+          </p>
+          <p class="control has-icons-left">
+            <input
+              class="input is-rounded "
+              type="text"
+              name="name"
+              placeholder="location name"
+              value="{{location.name}}"
+            />
+          </p>
+        </div>
+
+        <div class="field">
+          <p class="fieldTitle">
+            Address
+          </p>
+          <p class="control has-icons-left">
+            <input
+              class="input is-rounded "
+              type="text"
+              name="address"
+              placeholder="location address"
+              value="{{location.address}}"
+            />
+          </p>
+        </div>
+
+        <div class="field">
+          <p class="fieldTitle">
+            Latitude
+          </p>
+          <p class="control has-icons-left">
+            <input
+              class="input is-rounded "
+              type="text"
+              name="lat"
+              placeholder="Location lat"
+              value="{{location.lat}}"
+            />
+          </p>
+        </div>
+
+        <div class="field">
+          <p class="fieldTitle">
+            Longitude
+          </p>
+          <p class="control has-icons-left">
+            <input
+              class="input is-rounded "
+              type="text"
+              name="lng"
+              placeholder="Location lng"
+              value="{{location.lng}}"
+            />
+          </p>
+        </div>
+
+        <div class="field">
+          <p class="fieldTitle">
+            Description
+          </p>
+          <p class="control has-icons-left">
+            <input
+              class="input is-rounded "
+              type="text"
+              name="description"
+              placeholder="location description"
+              value="{{location.description}}"
+            />
+          </p>
+        </div>
+
+        <div class="field">
+          <p class="fieldTitle">
+            Image
+          </p>
+          <p class="control has-icons-left">
+            {{!-- Upload image --}}
+            <div class="card-image">
+              <figure class="box image is-256x256">
+                <img src={{location.image}}>
+              </figure>
+            </div>
+            <div class="" style="margin-top: 12px;">
+                <div id="file-select" class="file has-name is-fullwidth">
+                  <label class="file-label"> 
+                    <input class="file-input" 
+                      name="imagefile" 
+                      type="file" 
+                      accept="image/png, image/jpeg">
+                    <span class="file-cta fileUpload">
+                      <span class="file-icon">
+                        <i class="fas fa-upload"></i>
                       </span>
-                      <span class="file-name" style="border-top-right-radius: 50px; border-bottom-right-radius: 50px;">{{location.image}}</span>
-                    </label>
-                  </div>
-              </div>
-              {{!-- <span class="icon is-small is-left">
-                <i class="fas fa-keyboard" />
-              </span> --}}
-            </p>
-          </div>
-          <div class="field">
-            <p style="font-size: 16px; color: #3e8ed0; padding: 4px 10px;">
-              Type
-            </p>
-            <div class="control has-icons-left">
-              <div class="select is-rounded ">
-                <!-- <select value={selectedChoice}> -->
-                <!-- <select value={selectedChoice} on:change={onChangeHandler}> -->
-                <select name="type" value={{location.type}}>
-                  <option>attraction</option>
-                  <option>hotel</option>
-                  <option>restaurant</option>
-                </select>
-              </div>
-              {{!-- <span class="icon is-left">
-                <i class="fas fa-globe" />
-              </span> --}}
+                      <span class="file-label">
+                        Choose a file…
+                      </span>
+                    </span>
+                    <span class="file-name">{{location.image}}</span>
+                  </label>
+                </div>
+            </div>
+          </p>
+        </div>
+        
+        <div class="field">
+          <p class="fieldTitle">
+            Type
+          </p>
+          <div class="control has-icons-left">
+            <div class="select is-rounded ">
+              <select name="type" value={{location.type}}>
+                <option>attraction</option>
+                <option>hotel</option>
+                <option>restaurant</option>
+              </select>
             </div>
           </div>
         </div>
       </div>
+      
       <div class="modal-card-foot">
         <button type="submit" class="button is-link"> Update </button>
       </div>
@@ -170,3 +155,34 @@
     }
   };
 </script>
+
+<style>
+  .del-btn {
+    position: absolute; 
+    right: 474px; 
+    top: 44px; 
+    z-index: 101; 
+    color: rgba(255,255,255,0.6);
+  }
+  .modal-header {
+    background-color: #3e8ed0;
+  }
+  .modal-heading {
+    font-weight: 500;
+    color: #fff;
+  }
+  .fieldTitle {
+    font-size: 16px;
+    color: #3e8ed0;
+    padding: 4px 10px;
+  }
+  .fileUpload {
+    border-top-left-radius: 50px; 
+    border-bottom-left-radius: 50px;
+  }
+  .file-name {
+    border-top-right-radius: 50px; 
+    border-bottom-right-radius: 50px;
+  }
+
+</style>

@@ -15,9 +15,6 @@ export const locationsApi = {
         return Boom.serverUnavailable("Database Error");
       }
     },
-    tags: ["api"],
-    description: "Get all userApi",
-    notes: "Returns details of all userApi",
   },
 
   findAllAttractions: {
