@@ -50,6 +50,11 @@
             <a href="/user" class="dropdown-item">
               My Account
             </a>
+            {{#if (isEqualAdminType user.type)}}
+              <a href="/admin" class="dropdown-item">
+                Administration
+              </a>
+            {{/if}}
             <a href="/logout" class="dropdown-item">
               Logout
             </a>

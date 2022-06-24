@@ -383,4 +383,21 @@ export const placemarkController = {
       return h.redirect("/discovery");
     },
   },
+
+  // Adminstration
+  adminIndex: {
+    handler: async function (request, h) {
+      const loggedInUser = request.auth.credentials;
+      if (loggedInUser.type === "administrator") {
+        const returnedUsers = await db.userStore.getAllUsers();
+        const finalUsers = returnedUsers.filter((value) => value._id !== loggedInUser._id);
+        return h.view("Administration", {
+          title: "Administration",
+          user: loggedInUser,
+          allUsers: finalUsers,
+        });
+      }
+      return h.redirect("/user");
+    },
+  },
 };
