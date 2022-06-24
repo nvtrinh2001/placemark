@@ -1,3 +1,27 @@
+<div class="panel is-link">
+    <div class="panel-heading">London Locations Statistics</div>
+    <div class="panel-block">
+        <table class="table is-striped is-narrow is-hoverable is-fullwidth">
+            <thead>
+                <tr>
+                    <th>Number of Attractions</th>
+                    <th>Number of Hotels</th>
+                    <th>Number of Restaurants</th>
+                    <th>Total</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>{{londonLocations.numAttractions}}</td>
+                    <td>{{londonLocations.numHotels}}</td>
+                    <td>{{londonLocations.numRestaurants}}</td>
+                    <td>{{londonLocations.numLocations}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
 <div class="panel is-info">
     <div class="panel-heading">London Locations</div>
     <div class="panel-block">
@@ -31,6 +55,7 @@
         </table>
     </div>
 </div>
+
 <style>
     .panel {
         box-shadow: none; 

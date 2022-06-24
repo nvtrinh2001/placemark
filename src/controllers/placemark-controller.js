@@ -1,3 +1,4 @@
+/* eslint-disable no-await-in-loop */
 import { db } from "../models/db.js";
 import { imageStore } from "../models/image-store.js";
 
@@ -391,15 +392,33 @@ export const placemarkController = {
       if (loggedInUser.type === "administrator") {
         const returnedUsers = await db.userStore.getAllUsers();
         const locations = [];
+
         for (let i = 0; i < returnedUsers.length; i += 1) {
           // eslint-disable-next-line no-await-in-loop
           locations[i] = await db.locationStore.getAllLocations(returnedUsers[i]._id);
           for (let j = 0; j < locations[i].length; j += 1) {
             locations[i][j].userName = `${returnedUsers[i].firstName} ${returnedUsers[i].lastName}`;
           }
+          returnedUsers[i].numLocations = locations[i].length;
+          let numLocations = await db.locationStore.getAllAttractionLocations(returnedUsers[i]._id);
+          returnedUsers[i].numAttractions = numLocations.length;
+          numLocations = await db.locationStore.getAllHotelLocations(returnedUsers[i]._id);
+          returnedUsers[i].numHotels = numLocations.length;
+          numLocations = await db.locationStore.getAllRestaurantLocations(returnedUsers[i]._id);
+          returnedUsers[i].numRestaurants = numLocations.length;
         }
-        const londonLocations = await db.discoveryStore.getAllLocations();
         const finalUsers = returnedUsers.filter((value) => value._id !== loggedInUser._id);
+        finalUsers.numUsers = returnedUsers.length;
+
+        const londonLocations = await db.discoveryStore.getAllLocations();
+        londonLocations.numLocations = londonLocations.length;
+        let londonLocationTemp = await db.discoveryStore.getAllAttractionLocations();
+        londonLocations.numAttractions = londonLocationTemp.length;
+        londonLocationTemp = await db.discoveryStore.getAllHotelLocations();
+        londonLocations.numHotels = londonLocationTemp.length;
+        londonLocationTemp = await db.discoveryStore.getAllRestaurantLocations();
+        londonLocations.numRestaurants = londonLocationTemp.length;
+
         return h.view("Administration", {
           title: "Administration",
           user: loggedInUser,
