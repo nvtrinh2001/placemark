@@ -12,6 +12,7 @@ export const webRoutes = [
   { method: "GET", path: "/admin/remove/{id}", config: accountsController.getRemoveView },
   { method: "POST", path: "/admin/remove/{id}", config: accountsController.removeUserById },
 
+  { method: "GET", path: "/admin", config: placemarkController.adminIndex },
   { method: "GET", path: "/user", config: placemarkController.getUserInformation },
   { method: "POST", path: "/user/uploadimage", config: placemarkController.updateImage },
   { method: "POST", path: "/user/updateinfo", config: placemarkController.updateInfo },

@@ -383,4 +383,32 @@ export const placemarkController = {
       return h.redirect("/discovery");
     },
   },
+
+  // Adminstration
+  adminIndex: {
+    handler: async function (request, h) {
+      const loggedInUser = request.auth.credentials;
+      if (loggedInUser.type === "administrator") {
+        const returnedUsers = await db.userStore.getAllUsers();
+        const locations = [];
+        for (let i = 0; i < returnedUsers.length; i += 1) {
+          // eslint-disable-next-line no-await-in-loop
+          locations[i] = await db.locationStore.getAllLocations(returnedUsers[i]._id);
+          for (let j = 0; j < locations[i].length; j += 1) {
+            locations[i][j].userName = `${returnedUsers[i].firstName} ${returnedUsers[i].lastName}`;
+          }
+        }
+        const londonLocations = await db.discoveryStore.getAllLocations();
+        const finalUsers = returnedUsers.filter((value) => value._id !== loggedInUser._id);
+        return h.view("Administration", {
+          title: "Administration",
+          user: loggedInUser,
+          allUsers: finalUsers,
+          locations,
+          londonLocations,
+        });
+      }
+      return h.redirect("/user");
+    },
+  },
 };
