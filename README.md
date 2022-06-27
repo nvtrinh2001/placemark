@@ -1,4 +1,4 @@
-![Travisor](./src/assets/Travisor1.png)
+![Travisor](./public/images/Travisor.png)
 
 # Travisor Hapi
 
