@@ -13,7 +13,6 @@ Data (has been modified to fit the application) is based on several APIs hosted 
 - [Places](https://rapidapi.com/opentripmap/api/places1/)
 - [Hotels com Provider](https://rapidapi.com/tipsters/api/hotels-com-provider/)
 - [Worldwide Restaurants](https://rapidapi.com/ptwebsolution/api/worldwide-restaurants/)
-- [Forward & Reverse Geocoding](https://rapidapi.com/GeocodeSupport/api/forward-reverse-geocoding/)
 
 ## Website
 
