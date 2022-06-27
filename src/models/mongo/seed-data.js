@@ -8,7 +8,7 @@ export const seedData = {
       email: "homer@simpson.com",
       password: "secret",
       avatar: "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1a/f6/ee/68/default-avatar-2020-9.jpg?w=100&h=-1&s=1",
-      type: "administrator",
+      type: "client",
     },
     marge: {
       firstName: "Marge",
@@ -24,7 +24,7 @@ export const seedData = {
       email: "bart@simpson.com",
       password: "secret",
       avatar: "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1a/f6/ee/68/default-avatar-2020-9.jpg?w=100&h=-1&s=1",
-      type: "administrator",
+      type: "client",
     },
     admin: {
       firstName: "Admin",
