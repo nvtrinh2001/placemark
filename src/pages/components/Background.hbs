@@ -1,0 +1,67 @@
+<div class="background-container" >
+    <img class="layer1-bg-img" src={{layer-1}} alt="background">
+    <div class="title-container" >
+        <p class="sub-title" >TRAVELLING EXPERTS</p>
+        <p class="" style="padding: 8px;">
+            <p class="title first-line" >Your Travel</p>
+            <p class="title second-line">Advisors</p>
+        </p>
+    </div>
+    <div class="container layer-2" >
+        <img class="layer2-bg-img" src={{layer-2}} alt="">
+    </div>
+</div>
+
+<style>
+    .background-container {
+        position: relative; 
+        background-color: rgb(39, 39, 39); 
+        min-height: 1380px
+    }
+
+    .layer1-bg-img {
+        position: relative; 
+        width: 100%; 
+        max-height:fit-content; 
+        top: -60px;
+    }
+
+    .title-container {
+        position: absolute;
+        top: 180px; 
+        text-align: center; 
+        left: 0; 
+        right: 0;
+    }
+
+    .sub-title {
+        font-size: 16px; 
+        letter-spacing: 4px;
+    }
+
+    .title.first-line {
+        margin: 0; 
+        padding:0 0 4px 0; 
+        font-size: 68px;
+        letter-spacing: 2px;
+    }
+
+    .title.second-line {
+        margin: 0; 
+        padding: 4px 0; 
+        font-size: 68px;
+        letter-spacing: 2px;
+    }
+
+    .container.layer-2 {
+        position: relative;
+    }
+
+    .layer2-bg-img {
+        width: 100%; 
+        position: absolute; 
+        bottom: -160px; 
+        left: 0;
+    }
+
+</style>

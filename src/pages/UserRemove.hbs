@@ -1,0 +1,45 @@
+<div class="container">
+  <div class="modal is-active" style="z-index: 101;">
+    <a href="/admin" class="modal-background" />
+    <a href="/admin">
+      <i class="fas fa-times-circle del-btn"></i>
+    </a>
+    <form
+      class="modal-card"
+      action="/admin/remove/{{user._id}}"
+      method="POST"
+    >
+      <header class="modal-card-head modal-header">
+        <p class="modal-card-title modal-heading">
+          Remove user
+        </p>
+      </header>
+      <div class="modal-card-body">
+        <p class="field">
+          Travisor will remove "{{user.firstName}} {{user.lastName}}" from your user list.
+        </p>
+        <p>Are you sure?</p>
+      </div>
+      <div class="modal-card-foot">
+        <button type="submit" class="button is-danger"> Remove </button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<style>
+  .del-btn {
+    position: absolute; 
+    right: 474px; 
+    top: 280px; 
+    z-index: 101; 
+    color: rgba(255,255,255,0.6);
+  }
+  .modal-header {
+    background-color: #3e8ed0;
+  }
+  .modal-heading {
+    font-weight: 500;
+    color: #fff;
+  }
+</style>

@@ -1,0 +1,113 @@
+<form action="/user/updateinfo" method="POST" class="panel is-info">
+  <div class="panel-heading">Your Information</div>
+  <div class="panel-block">
+  <div class="field-label is-normal">
+    <label class="label">Name</label>
+  </div>
+  <div class="field-body">
+    <div class="field">
+      <p class="control is-expanded has-icons-left">
+        <input class="input" placeholder="First Name" name="firstName" value="{{user.firstName}}">
+        <span class="icon is-small is-left">
+          <i class="fas fa-user"></i>
+        </span>
+      </p>
+    </div>
+    <div class="field">
+      <p class="control is-expanded has-icons-left">
+        <input class="input" type="text" placeholder="Last Name" name="lastName" value="{{user.lastName}}">
+        <span class="icon is-small is-left">
+          <i class="fas fa-user"></i>
+        </span>
+      </p>
+    </div>
+  </div>
+</div>
+
+<div class="panel-block">
+  <div class="field-label is-normal">
+    <label class="label">Email</label>
+  </div>
+  <div class="field-body">
+    <div class="field">
+      <p class="control is-expanded has-icons-left">
+        <input class="input" type="email" placeholder="Email" name="email" value={{user.email}}>
+        <span class="icon is-small is-left">
+          <i class="fas fa-envelope"></i>
+        </span>
+      </p>
+    </div>
+  </div>
+</div>
+
+<div class="panel-block">
+  <div class="field-label is-normal">
+    <label class="label">Password</label>
+  </div>
+  <div class="field-body">
+    <div class="field">
+      <p class="control is-expanded has-icons-left">
+        <input class="input" type="password" name="password" id="password" placeholder="Password" value="{{user.password}}">
+        <span class="icon is-small is-left" id="togglePassword">
+          <i class="fas fa-eye-slash" id="icon-password"></i>
+        </span>
+      </p>
+    </div>
+  </div>
+</div>
+
+<div class="panel-block">
+  <div class="field-label is-normal">
+    <label class="label">Account Type</label>
+  </div>
+  <div class="field-body">
+    <div class="field is-narrow">
+      <div class="control">
+        <div class="button is-static" name="type" value={{user.type}}>
+          <p>{{user.type}}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="panel-block">
+  <div class="field-label">
+    <!-- Left empty for spacing -->
+  </div>
+  <div class="field-body">
+    <div class="field">
+      <div class="control">
+        <button class="button is-info">
+          Update
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+</form>
+
+<script>
+    const togglePassword = document.querySelector("#togglePassword");
+    const password = document.querySelector("#password");
+    const iconPassword = document.querySelector("#icon-password");
+
+    togglePassword.addEventListener("click", function () {
+        // toggle the type attribute
+        const type = password.getAttribute("type") === "password" ? "text" : "password";
+        password.setAttribute("type", type);
+        
+        // toggle the icon
+        if (iconPassword.classList.contains("fa-eye"))
+          iconPassword.classList.replace("fa-eye", "fa-eye-slash");
+        else if (iconPassword.classList.contains("fa-eye-slash"))
+          iconPassword.classList.replace("fa-eye-slash", "fa-eye");
+    });
+</script>
+
+<style>
+  #togglePassword {
+     pointer-events: all; 
+     cursor: pointer;
+  }
+</style>

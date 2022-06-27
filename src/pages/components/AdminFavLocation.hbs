@@ -1,0 +1,81 @@
+<div class="panel is-link">
+    <div class="panel-heading">Favorite Locations Statistics</div>
+    <div class="panel-block">
+        <table class="table is-striped is-narrow is-hoverable is-fullwidth">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>User Name</th>
+                    <th># Attractions</th>
+                    <th># Hotels</th>
+                    <th># Restaurants</th>
+                    <th>Total</th>
+                </tr>
+            </thead>
+            <tbody>
+                {{#each allUsers}}
+                    <tr>
+                        <th>{{@index}}</th>
+                        <td>{{firstName}} {{lastName}}</td>
+                        <td>{{numAttractions}}</td>
+                        <td>{{numHotels}}</td>
+                        <td>{{numRestaurants}}</td>
+                        <td>{{numLocations}}</td>
+                    </tr>
+                {{/each}}
+            </tbody>
+            <tfoot>
+                <tr>
+                    <th>Total Users</th>
+                    <th>{{allUsers.numUsers}}</th>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </tfoot>
+        </table>
+    </div>
+</div>
+
+<div class="panel is-info">
+    <div class="panel-heading">Favorite Locations</div>
+    <div class="panel-block">
+        <table class="table is-striped is-narrow is-hoverable is-fullwidth">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>User Name</th>
+                    <th>Location Name</th>
+                    <th>Latitude</th>
+                    <th>Longitude</th>
+                    <th>Type</th>
+                    <th></th>
+                </tr>
+            </thead>
+            
+            <tbody>
+                {{#each locations}}
+                    {{#each this}}
+                    <tr>
+                        <th>{{@index}}</th>
+                        <td>{{userName}}</td>
+                        <td>{{name}}</td>
+                        <td>{{lat}}</td>
+                        <td>{{lng}}</td>
+                        <td>{{type}}</td>
+                        <td><a class="button is-small is-rounded is-danger" href="/favorite/remove/{{_id}}">Delete</a></td>
+                    </tr>
+                    {{/each}}
+                {{/each}}
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<style>
+    .panel {
+        box-shadow: none; 
+        border: 1px solid #ccc;
+    }
+</style>

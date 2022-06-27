@@ -1,0 +1,64 @@
+<div class="panel is-link">
+    <div class="panel-heading">London Locations Statistics</div>
+    <div class="panel-block">
+        <table class="table is-striped is-narrow is-hoverable is-fullwidth">
+            <thead>
+                <tr>
+                    <th>Number of Attractions</th>
+                    <th>Number of Hotels</th>
+                    <th>Number of Restaurants</th>
+                    <th>Total</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>{{londonLocations.numAttractions}}</td>
+                    <td>{{londonLocations.numHotels}}</td>
+                    <td>{{londonLocations.numRestaurants}}</td>
+                    <td>{{londonLocations.numLocations}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<div class="panel is-info">
+    <div class="panel-heading">London Locations</div>
+    <div class="panel-block">
+        <table class="table is-striped is-narrow is-hoverable is-fullwidth">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Location Name</th>
+                    <th>Latitude</th>
+                    <th>Longitude</th>
+                    <th>Type</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tfoot>
+                <tr>
+                </tr>
+            </tfoot>
+            <tbody>
+                {{#each londonLocations}}
+                    <tr>
+                        <th>{{@index}}</th>
+                        <td>{{name}}</td>
+                        <td>{{lat}}</td>
+                        <td>{{lng}}</td>
+                        <td>{{type}}</td>
+                        <td><a class="button is-small is-rounded is-danger" href="/discovery/remove/{{_id}}">Delete</a></td>
+                    </tr>
+                {{/each}}
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<style>
+    .panel {
+        box-shadow: none; 
+        border: 1px solid #ccc;
+    }
+</style>

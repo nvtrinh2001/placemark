@@ -1,0 +1,177 @@
+<div class="container">
+  <div class="modal is-active" style="z-index: 101;">
+    <a href="/discovery" class="modal-background" />
+    <a href="/discovery">
+      <i class="fas fa-times-circle del-btn"></i>
+    </a>
+    <form 
+      class="modal-card" 
+      action="/discovery/create" 
+      method="POST" 
+      enctype="multipart/form-data">
+
+      <header class="modal-card-head modal-header">
+        <p class="modal-card-title modal-heading">
+          Add a new London location
+        </p>
+      </header>
+
+      <div class="modal-card-body">
+        <div class="field">
+          <p class="fieldTitle">
+            Name
+          </p>
+          <p class="control has-icons-left">
+            <input
+              class="input is-rounded "
+              type="text"
+              name="name"
+              placeholder="location name"
+            />
+          </p>
+        </div>
+
+        <div class="field">
+          <p class="fieldTitle">
+            Address
+          </p>
+          <p class="control has-icons-left">
+            <input
+              class="input is-rounded "
+              type="text"
+              name="address"
+              placeholder="location address"
+            />
+          </p>
+        </div>
+
+        <div class="field">
+          <p class="fieldTitle">
+            Latitude
+          </p>
+          <p class="control has-icons-left">
+            <input
+              class="input is-rounded "
+              type="text"
+              name="lat"
+              placeholder="location latitude"
+            />
+          </p>
+        </div>
+
+        <div class="field">
+          <p class="fieldTitle">
+            Longitude
+          </p>
+          <p class="control has-icons-left">
+            <input
+              class="input is-rounded "
+              type="text"
+              name="lng"
+              placeholder="location longitude"
+            />
+          </p>
+        </div>
+
+        <div class="field">
+          <p class="fieldTitle">
+            Description
+          </p>
+          <p class="control has-icons-left">
+            <input
+              class="input is-rounded "
+              type="text"
+              name="description"
+              placeholder="location description"
+            />
+          </p>
+        </div>
+
+        <div class="field">
+          <p class="fieldTitle">
+            Image
+          </p>
+          <p class="control has-icons-left">
+            {{!-- Upload image --}}
+            <div class="" >
+                <div id="file-select" class="file has-name is-fullwidth">
+                  <label class="file-label"> 
+                  <input class="file-input" name="imagefile" type="file" accept="image/png, image/jpeg" >
+                    <span class="file-cta fileUpload">
+                      <span class="file-icon">
+                        <i class="fas fa-upload"></i>
+                      </span>
+                      <span class="file-label">
+                        Choose a file…
+                      </span>
+                    </span>
+                    <span class="file-name"></span>
+                  </label>
+                </div>
+            </div>
+          </p>
+        </div>
+
+        <div class="field">
+          <p class="fieldTitle">
+            Type
+          </p>
+          <div class="control has-icons-left">
+            <div class="select is-rounded ">
+              <select name="type">
+                <option selected>attraction</option>
+                <option>hotel</option>
+                <option>restaurant</option>
+              </select>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="modal-card-foot">
+        <button type="submit" class="btn-create button is-link"> Create </button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<script>
+  const fileInput = document.querySelector(".file-input");
+  fileInput.onchange = () => {
+    if (fileInput.files.length > 0) {
+      const fileName = document.querySelector(".file-name");
+      fileName.textContent = fileInput.files[0].name;
+    }
+  };
+</script>
+
+<style>
+  .del-btn {
+    position: absolute; 
+    right: 474px; 
+    top: 44px; 
+    z-index: 101; 
+    color: rgba(255,255,255,0.6);
+  }
+  .modal-header {
+    background-color: #3e8ed0;
+  }
+  .modal-heading {
+    font-weight: 500;
+    color: #fff;
+  }
+  .fieldTitle {
+    font-size: 16px;
+    color: #3e8ed0;
+    padding: 4px 10px;
+  }
+  .fileUpload {
+    border-top-left-radius: 50px; 
+    border-bottom-left-radius: 50px;
+  }
+  .file-name {
+    border-top-right-radius: 50px; 
+    border-bottom-right-radius: 50px;
+  }
+
+</style>

@@ -1,0 +1,142 @@
+<article class="panel is-info">
+  <p class="panel-heading">London Locations</p>
+  <div class="control">
+    <p class="panel-tabs">
+      {{#if all}}
+      <a href="/discovery" class="is-active">All</a>
+      {{else}}
+      <a href="/discovery">All</a>
+      {{/if}}
+      {{#if attractions}}
+      <a href="/discovery/attractions" class="is-active">Attractions</a>
+      {{else}}
+      <a href="/discovery/attractions">Attractions</a>
+      {{/if}}
+      {{#if hotels}}
+      <a href="/discovery/hotels" class="is-active">Hotels</a>
+      {{else}}
+      <a href="/discovery/hotels">Hotels</a>
+      {{/if}}
+      {{#if restaurants}}
+      <a href="/discovery/restaurants" class="is-active">Restaurants</a>
+      {{else}}
+      <a href="/discovery/restaurants">Restaurants</a>
+      {{/if}}
+    </p>
+  </div>
+  <div class="list-container">
+    {{#if locations}}
+  {{#each locations}}
+    <div class="box" style="padding-top: 10px;">
+        <div class="card-image">
+          <figure class="image is-4by3">
+            <img
+              src={{images.first}}
+              alt={{name}}
+              style="object-fit: contain;"
+            />
+          </figure>
+        </div>
+        <div class="panel-block" style="padding-left: 0px;">
+          <div class="subTitle">
+            {{name}}
+          </div>
+        </div>
+
+        <div class="address">
+          <div class="address-subtitle">
+            Address
+          </div>
+          <div class="address-item">
+            {{address}}
+          </div>
+        </div>
+
+        <div class="address">
+          <div class="address-subtitle">
+            Latitude
+          </div>
+          <div class="address-item">
+            {{lat}}
+          </div>
+        </div>
+
+        <div class="address">
+          <div class="address-subtitle">
+            Longitude
+          </div>
+          <div class="address-item">
+            {{lng}}
+          </div>
+        </div>
+
+        <hr class="dropdown-divider">
+        <div class="description">
+          <div class="description-subtitle">
+            Description
+          </div>
+          <div class="description-item">
+            {{#each description_array}}
+              <p>{{this}}</p>
+            {{/each}}
+          </div>
+        </div>
+        <hr class="dropdown-divider">
+        
+        <div class="button-wrapper">
+          <div class="button1">
+            <a
+              class="button is-small is-danger is-rounded"
+              style="margin-top: 6px;"
+              href="/discovery/remove/{{_id}}">Remove</a
+            >
+          </div>
+          <div class="button2">
+            <a
+              class="button is-small is-link is-rounded"
+              style="margin-top: 6px;"
+              href="/discovery/update/{{_id}}">Update</a
+            >
+          </div>
+        </div>
+    </div>
+  {{/each}}
+  {{else}}
+  <img src="https://i.pinimg.com/originals/44/8b/70/448b7040d44cfc0a620c03c63df26680.png" alt="">
+  {{/if}}
+  </div>
+</article>
+
+<style>
+  .panel {
+     margin-top: 12px; 
+     padding-bottom: 8px;
+  }
+  .control {
+     margin: 6px 0 12px 0;
+  }
+  .list-container {
+    max-height: 560px;
+    overflow: auto;
+  }
+  .address, 
+  .description,
+  .button-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 6px 0;
+  }
+  .button2,
+  .address-item, 
+  .description-item {
+    text-align: right;
+    font-size: 14px;
+  }
+  .button1, 
+  .address-subtitle, 
+  .description-subtitle {
+    font-size: 14px;
+    color: #3e8ed0;
+  }
+</style>
