@@ -81,7 +81,7 @@ export const accountsController = {
           type: request.payload.type,
         };
         const user = await db.userStore.updateUserById(request.params.id, userData);
-        if (user) return h.redirect("/user");
+        if (user) return h.redirect("/admin");
         return null;
       } catch (err) {
         console.log(err);
@@ -100,7 +100,7 @@ export const accountsController = {
   removeUserById: {
     handler: async function (request, h) {
       await db.userStore.deleteUserById(request.params.id);
-      return h.redirect("/user");
+      return h.redirect("/admin");
     },
   },
 };
